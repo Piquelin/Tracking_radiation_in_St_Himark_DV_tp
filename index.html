@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Desastre en St. Himark! — Ciencia Ciudadana al Rescate</title>
+    <style>
+        /* ---------- RESET Y ESTILOS GENERALES ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: #fafaf8;
+            color: #2d2d2d;
+            line-height: 1.8;
+            padding: 2rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        /* ---------- TIPOGRAFÍA ---------- */
+        h1, h2, h3, h4 {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: #1e3a5f;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            text-align: center;
+            margin-top: 0.5rem;
+            margin-bottom: 0.3rem;
+            color: #1a2e4a;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #4a5d7a;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+            font-family: 'Helvetica', 'Arial', sans-serif;
+        }
+
+        .author {
+            text-align: center;
+            font-size: 1rem;
+            color: #5c6f8c;
+            margin-bottom: 2.5rem;
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            border-bottom: 1px solid #e6e9ef;
+            padding-bottom: 1.8rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            border-left: 5px solid #2c6b9e;
+            padding-left: 1.2rem;
+            margin-top: 3rem;
+            margin-bottom: 1.8rem;
+            clear: both;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #274e6d;
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        /* ---------- ENLACES ---------- */
+        a {
+            color: #2c6b9e;
+            text-decoration: none;
+            border-bottom: 1px dotted #b0c7dd;
+        }
+        a:hover {
+            border-bottom: 1px solid #2c6b9e;
+        }
+
+        /* ---------- GRÁFICOS Y MULTIMEDIA ---------- */
+        .figure-container {
+            width: 80%;
+            max-width: 1000px;
+            margin: 2rem auto;
+            text-align: center;
+            background: #ffffff;
+            padding: 0.5rem 0 1rem 0;
+            border-radius: 6px;
+            border: 1px solid #e2e6ed;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .figure-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        /* Efecto zoom suave en imágenes */
+		/*
+        .figure-container img:hover {
+            transform: scale(1.015);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+        }
+		*/
+		
+        .figure-container iframe {
+            width: 100%;
+            height: 550px;
+            border: none;
+            border-radius: 4px;
+            background: #f8f9fc;
+        }
+
+        .figure-container video {
+            width: 100%;
+            max-width: 100%;
+            border-radius: 4px;
+            background: #000;
+        }
+
+        .figcaption {
+            font-size: 0.9rem;
+            color: #4d627a;
+            margin-top: 0.7rem;
+            font-style: italic;
+            font-family: 'Helvetica', 'Arial', sans-serif;
+        }
+
+        /* ---------- PIE DE PÁGINA ---------- */
+        footer {
+            margin-top: 4rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e0e4ec;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #5a6e89;
+            font-family: 'Helvetica', 'Arial', sans-serif;
+        }
+
+        footer .materia {
+            font-weight: 500;
+            color: #1e3a5f;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .container {
+                padding: 1.5rem 1rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+                padding-left: 0.8rem;
+            }
+            .figure-container {
+                width: 95%;
+                margin: 1.5rem auto;
+            }
+            .figure-container iframe {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .figure-container iframe {
+                height: 260px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- TÍTULO Y AUTOR -->
+    <h1>¡Desastre en St. Himark!<br>Ciencia Ciudadana al Rescate</h1>
+    <div class="subtitle">Visualización de datos para la toma de decisiones</div>
+    <div class="author">Juan Francisco González Valle López</div>
+
+    <!-- ============================================================ -->
+    <!-- 0. INTRODUCCIÓN                                               -->
+    <!-- ============================================================ -->
+    <section id="introduccion">
+        <h2>0. Introducción</h2>
+
+        <h3>a. Descripción del caso</h3>
+        <p>
+            <!-- Aquí copia el texto de tu informe sobre la descripción del caso -->
+            <em>Este informe aborda el análisis de las lecturas de radiación con que cuenta la ciudad de St. Himark donde debido a un terremoto la planta de energía nuclear sufre daños que provocan una fuga de contaminación radiactiva. Además, una fuga de refrigerante salpicó los autos de los empleados, contaminándolos en diferentes niveles. Tiene como principal objetivo detectar potenciales riesgos para la población a la vez que atender la preocupación de la población respecto a la radiación.
+			<br>St. Himark es una comunidad vibrante ubicada en el Mar de Oceanus. Hogar del mundialmente reconocido Museo de St. Himark, de hermosas playas y de la Reserva Natural de Wilson Forest, St. Himark es una de las mejores ciudades de la región para criar una familia y ofrece empleo en diversas industrias, incluyendo la Planta de Energía Nuclear Always Safe, donde trabajan 700 personas.
+			</em>
+        </p>
+
+        <h3>b. Descripción y caracterización de los datos</h3>
+        <p>
+            <!-- Aquí describe los datos: sensores, variables, periodo, etc. -->
+            <em>Los sensores con los que contamos para realizar el diagnóstico de la situación son de dos tipos. Nueve sensores profesionales fijos financiados por la Planta Always Safe y cincuenta sensores caseros diseñados para colocarse en los automóviles, construidos como parte de una iniciativa ciudadana liderada por miembros de la Sociedad de Ciencias de Himark. 
+			<br>La captura de datos de los sensores moviles se realiza cada 5 segundos y se sube al servidor en la nube para cada lectura los siguientes atributos Timestamp, Sensor-id, Long, Lat, Value, Units, User-id. Para los sensores fijos la frecuencia es la misma pero se omiten los datos de ubicación, Long, Lat, que son conocidos y el User-id. </em>
+        </p>
+
+        <!-- GRÁFICO ESTÁTICO: mapa_sensores_datos.png -->
+        <div class="figure-container">
+            <img src="mapa_sensores_datos.png" alt="Mapa de sensores y caracterización de datos">
+            <div class="figcaption">Figura 1 – Ubicación de sensores fijos (numerados) y móviles (en color), de los hospitales (+) y la planta de energía. <br>Las lecturas de los sensores se representan en la ubicación donde fueron capturadas y se adecuó el radio del marcador según la mangnitud de la lectura en cpm.</div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 1. ANÁLISIS DE RADIACIÓN A LO LARGO DEL TIEMPO               -->
+    <!-- ============================================================ -->
+    <section id="analisis-temporal">
+        <h2>1. Análisis de radiación a lo largo del tiempo</h2>
+
+        <h3>a. Imágenes y cambios temporales</h3>
+        <p>
+            <!-- Breve descripción de lo que se ve en los gráficos -->
+            <em>Si observamos en la figura interactiva 2, filtrando valores aislados y eligiendo un umbral de los valores de lectura por encima de 80, podemos observar algunos patrones con sentido en los valores de radiación a lo largo el tiempo.
+			<br>Analizamos primero los sensores fijos, provistos por la empresa que gestiona el reactor y los que suponemos a priori mejor calibrados y más confiables.
+			<br>Observamos que el <strong>15</strong>, el más cercano a la central de energía deja de funcionar a partir de un momento pero antes hay una zona que presenta una serie corte de registros altos de radiación. El sensor <strong>13</strong> también registraun pico en un momenta más breve pero cercano al pico del <strong>15</strong> por lo que puede ser significativo. El sensor <strong>12</strong> también cercano a la central registra una serie de valores elevados que en un momento baja y luego vuelve a aumentar lo que podría indicar movimientos cercanos de fuentes contaminadas. El sensor <strong>11</strong> sube en valores en cuanto bajan los del sensor <strong>12</strong> lo que `puede sugerir un desplazamiento de la radiacion en esa dirección. El sensor <strong>9</strong> ve incrementarse sus valores coincidiendo con la segunda suba del sensor <strong>12</strong> lo que puede sugerir un origen común. Para los sensores <strong>13 y 4</strong> se abservan valores levemente más elevados hacia el ultimo cuarto de la linea de tiempo, pero no muy marcado, exploratoriamente podemos pensar algo de radiacion distribuida los alcanza.
+			<br>Pasando a los sensores móviles, Encontramos un grupo muy marcado, sensores <strong>120, 121, 122, 124, 125, 127, 128, 129 y 145</strong>, que registran niveles muy elevados de radiación rodeados de blancos importantes. En el video vemos que esas lecturas elevadas y blancos en los registros se explican por la salida y retorno al mapa y la confluencia en un mismo punto de todos esos sensores. Los otros sensores moviles que nos llaman la atención son <strong>109, 110 y 113</strong> que presentan franjas de valores altos en distíntos momentos. Y finalmente los otros sensores que pasan el filtro parecen tener valores más elevados a partir de la primera mitad, lo que se coincide con los valores más elevados de los sensores <strong>13 y 4</strong>.
+			<br>Los Sensores <strong>118 y 120</strong> que presentan valores altos desde antes del incidente deben ser tomados con recaudo.
+			</em>
+        </p>
+		
+		<!-- GRÁFICO INTERACTIVO: valor_tiempo_con_umbral.html -->
+        <div class="figure-container">
+            <iframe src="dashboard_radiacion.html" title="Gráfico interactivo de radiación temporal"></iframe>
+            <div class="figcaption">Figura 2 – Evolución interactiva de la radiación con umbral destacado (Plotly/HoloViews).</div>
+        </div>
+		
+
+        <h3>b. Cambios a lo largo del tiempo</h3>
+        <p>
+            <!-- Breve descripción del video -->
+            <em>En el video y el mapa intractivo de más abajo pueden observarse los desplazamientos de los sensores moviles. En el video como animanción y en el mapa interactivo con el eje temporal proyectado en el eje Z.
+			<br>Para el video elegimos dos graficas, el mapa que además de seguir la posición de los sensores en el tiempo hace una ponderación de los valores de los sensores cercanos a cada recuadro de la grilla y lo colorea segun la escala. Para poder seguir la evolucion de los valores de cada sensor y poder relacionarlos a la derecha contamos con la evolucion temporal de los valores registrados para cada sensor manteniendo la escala cromática para los valores de radiación.
+			<br>En el video se puede ver claramente cuando varios de los sensores moviles abandonan el mapa y se pierde su señal.</em>
+        </p>
+        <div class="figure-container">
+            <video controls preload="metadata">
+                <source src="video_todos.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+            <div class="figcaption">Video 1 – Evolución espacio-temporal de la radiación (MP4).</div>
+        </div>
+
+		<!-- GRÁFICO INTERACTIVO: mapa_interactivo_himark.html -->
+        <div class="figure-container">
+            <iframe src="mapa_interactivo_himark.html" style="height: 700px !important;" title="Mapa de señales de radiacion elevadas"></iframe>
+            <div class="figcaption">Figura 3 – Evolución en el espacio de las señales de radiacion. 
+			<br>Permite seleccionar vistas principales e incluye para referencia un plano temporal movil. Cuenta además con un filtro de señales elevadas aisladas. </div>
+        </div>
+
+
+
+
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 2. INCERTIDUMBRE EN LAS MEDICIONES                           -->
+    <!-- ============================================================ -->
+    <section id="incertidumbre">
+        <h2>2. Incertidumbre en las mediciones a lo largo de la ciudad</h2>
+
+        <h3>a. Comparación de incertidumbre entre sensores fijos y móviles</h3>
+        <p>
+            <em>Para comparar la incertidumbre de los sensores tomamos como base el periodo previo al terremoto donde no hay reportes de fugas de la planta
+			de energía y por lo tanto no deberían registrarse valores elevados de radiación.
+			<br>Se observa que los sensores fijos presentan un menor desvio en las lecturas. Sin embargo los sensores móviles se mantienen dentro de la escala de
+			los valores normales de registro, como consideramos a los previos al terremoto, muy por debajo de lo que serán luego del incidente los valores de radiación.
+			Por esta razón <strong>solo eliminaremos de nuestro set de datos al sensor 118</strong> que presenta valores fuera de rango antes y despues del incidente.
+			</em>
+        </p>
+
+        <div class="figure-container">
+            <img src="incertidumbre_fijos_vs_moviles.png" alt="Incertidumbre sensores fijos vs móviles">
+            <div class="figcaption">Figura 4 – Comparación de incertidumbre entre sensores fijos y móviles antes del incidente.</div>
+        </div>
+
+        <h3>b. Regiones de la ciudad con mayor incertidumbre</h3>
+        <p>
+            <em>El primer par de mapas muestra la variabilidad de la radiación en las zonas donde efectivamente medimos.
+			Separamos los registros en antes y después del terremoto para poder fijar una linea base pre-incidente y 
+			comparar las zonas con mayor variación en los registros que son las que tienen potencial de estar contaminadas.
+			De hecho, en el mapa posterior al incidente, obsevamos varias regiones con variaciones superiores a 100, 
+			que coinciden con los registros elevados de radiación que analizamos en el punto previo.
+			</em>
+        </p>
+        <div class="figure-container">
+            <img src="Variacion_en_mediciones_rec.png" alt="Mapa de variación de mediciones por región">
+            <div class="figcaption">Figura 5 – Mapa de variación de mediciones por zonas de la ciudad.</div>
+        </div>
+		<p>
+            <em>
+			Incorporamos un segundo par de mapas que expone la incertidumbre de la medición, considerando la cobertura geográfica, revelando en amarillo/verde aquellas áreas que presentan un alto índice de duda
+			no porque la radiación falle, sino porque carecemos de cobertura geográfica de sensores en esos sectores específicos durante ese periodo de tiempo. Esto explica que las zonas de incertidumbre bajan al rededor de las ubicaciones de los sensores.</em>
+        </p>
+		<div class="figure-container">
+            <img src="Variacion_en_mediciones_con_distancia_rec.png" alt="Mapa de incertidumbre por región">
+            <div class="figcaption">Figura 6 – Mapa de incertidumbre de mediciones por zonas de la ciudad.</div>
+        </div>
+
+        <h3>c. Efectos observables después del terremoto</h3>
+        <p>
+            <em>Tras el incidente del terremoto se observa una mayor dispersión de los registros de valores. Debemos atribuir esto sobretodo a la existencia de lecturas de radiación reales. </em>
+        </p>
+		
+				
+        <div class="figure-container">
+            <iframe src="boxplot_interactivo_sensores.html" title="Comparacion de incertidumbres antes y despues del incidente"></iframe>
+            <div class="figcaption">Figura 3 – Distribución de valores para cada sensor Post-incidente y Pre-incidente.</div>
+        </div>
+		
+		
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 3. ÁREAS DE PREOCUPACIÓN                                     -->
+    <!-- ============================================================ -->
+    <section id="areas-preocupacion">
+        <h2>3. Identificación de áreas de preocupación</h2>
+
+        <h3>a. Potenciales lugares de contaminación y vehículos afectados</h3>
+        <p>
+            <em>El mapa isométrico de registros de radiación por zonas nos poermite identificar regiones que registraron valores sostenidos por encima del umbral de 100 cpm.
+			Las regiones con cambios bruscos de gradiente se explican por registros disimiles muy cercanos.
+			Este grafico debe ser leído con la consideración de que las áreas que no presentan trayectorias o sensores cercanos tienen mayor incertidumbre. </em>
+        </p>
+		
+
+        <!-- GRÁFICO ESTÁTICO: zona_radiacion.png -->
+		<div class="figure-container">
+            <img src="radiacion_valores.png" alt="Zona de alta radiación">
+            <div class="figcaption">Figura 7 – Regiones con mayor concentración de radiación después del incidente.</div>
+        </div>
+        <div class="figure-container">
+            <img src="isometrico_radiacion.png" alt="Zona de alta radiación">
+            <div class="figcaption">Figura 8 – Regiones con mayor concentración de radiación después del incidente.</div>
+        </div>
+		
+		 <p>
+            <em>Tenemos lecturas muy fuertes en la intersección de la <strong>Autopista Wilson Forest con la Avenida Hilmark</strong>. Además siguiendo la costa aparece orta región sospechosa en <strong>Scenic Vista</strong>.
+			La zona cercana a la <strong>Planta de Energía</strong> muestra valores elevados en un radio de influencia extenso, cosa que es lógica si concideramos que es el origen principal de radiación.
+			Luego destaca la salida por el <strong>el Puente Jade</strong> donde más de un sensor movil registra valores por encima de 100 cpm.
+			 </em>
+        </p>
+
+        <h3>b. Estimación de automóviles contaminados y posibles fugas</h3>
+        <p>
+            <em>En la animación compartida más arriba puede verse los automóviles que entran y salen de la ciudad. 
+			En particular nos interesan los vinculados a los sensores <strong>120, 121, 122, 124, 125, 127, 128, 129 y 145</strong>,
+			que como destacamos antes registron valores importantes de radiación entre entradas y salidas de la ciudad. 
+			<br>Otros sensores que presentas rastros sostenidos de radiacion en el tiempo son <strong> 102, 132, 141, 142, 146  </strong> </em>
+        </p>
+        <!-- Aquí no hay gráfico asignado, puedes agregar algún texto o tabla si lo deseas -->
+
+        <h3>c. Propuesta de nuevos sensores</h3>
+        <p>
+            <em>Más allá de que no descarté ningún sensor en mi análisis yo intentaría agregar más de los dos tipos de sensores. 
+			Colocaría los fijos en los puentes y accesos de la cuidad y trataría que los moviles estuvieran uniformemente distribuidos.
+			En particular considero que para este incidente puntual hubiera side de ayuda tener sensores fijos en el centro de la ciudad, 
+			Jade Ave y Cascadia St, y en la zona más despoblada de Pepper Mill, Terraping Springs y Scenic Vista.</em>
+        </p>
+   
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 4. CONCLUSIONES Y RESUMEN                                    -->
+    <!-- ============================================================ -->
+    <section id="conclusiones">
+        <h2>4. Conclusiones y resumen</h2>
+
+        <h3>a. Cursos de acción para la ciudad</h3>
+        <p>
+            <em>Según los registros de la mayoría de los sensores, los niveles de radiación de la ciudad permanecen en un nivel más
+			alto que el que había previo al terremoto. Por lo que es seguro que hay que tomar medidas para seguir reduciendolos. 
+			En particular prestaría atención a quienes presenten sintomas de radiacion en la zona norte de la cuidad dado que se
+			observan varios registros cercanos a los hospitales. 
+			Además revisaría el area de Scenic Vista y la intersección de Autopista Wilson Forest con la Avenida Hilmark.</em>
+        </p>
+
+        <h3>b. Análisis comparativo entre sensores fijos y móviles</h3>
+        <p>
+            <em>Entre los sensores mobiles y los fijos tenemos que las fortalezas de los fijos es que además de ser más precisos,
+			tienen el rgistro completo de valores par un mismo lugar lo que hace posible hacer un seguimiento pleno para ese lugar. 
+			Lo que tiene en contra es su poca cobertura. Los moviles en cambio cubren un área más grande al desplazarse pero una vez que
+			salen del area contaminada dejan de medir con lo que no se sabe si los valores de ese lugar disminuyeron o no hasta que
+			algun otro sensor movil vuelve a pasar. Una Solución intermedia podría ser colocar sensores moviles en el transporte público
+			que garantiza una cobertura extendida y con una actualización frecuente. 
+			Uno de los temas de nuestros sensores moviles es que durante la noche no se movían mucho tampoco y pasaban a ser sensores fijos de hecho.</em>
+        </p>
+        
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- PIE DE PÁGINA                                                -->
+    <!-- ============================================================ -->
+    <footer>
+        <span class="materia">Visualización de la Información</span> — 
+        Maestría en Explotación de Datos y Descubrimiento de Conocimiento — 
+        Exactas UBA — Julio 2026
+    </footer>
+
+</div>
+<!-- fin container -->
+</body>
+</html>
